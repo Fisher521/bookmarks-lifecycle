@@ -1,0 +1,9 @@
+node_modules/
+*.log
+.DS_Store
+
+# Internal engineering reports — not for publication
+CODEX-REVIEW.md
+FIX-REPORT.md
+IMPLEMENTATION-REPORT.md
+IMPROVEMENTS-REPORT.md

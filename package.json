@@ -1,0 +1,46 @@
+{
+  "name": "bookmarks-lifecycle",
+  "version": "0.2.0",
+  "description": "Give your saved bookmarks a lifecycle: 24 hours to decide, 30 days to watch, or keep. Nothing is ever deleted \u2014 lapsed items just leave your attention, not your disk. A local MCP server, no accounts, no cloud.",
+  "type": "module",
+  "bin": {
+    "bookmarks-lifecycle": "./src/index.js"
+  },
+  "main": "./src/index.js",
+  "files": [
+    "src",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "node --test test/*.test.mjs",
+    "start": "node src/index.js"
+  },
+  "keywords": [
+    "mcp",
+    "mcp-server",
+    "model-context-protocol",
+    "bookmarks",
+    "browser-bookmarks",
+    "read-later",
+    "lifecycle",
+    "triage",
+    "claude",
+    "cursor"
+  ],
+  "author": "Fisher",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Fisher521/bookmarks-lifecycle"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.30.0",
+    "bookmarks-mcp": "file:../bookmarks-mcp",
+    "zod": "^3.25.0"
+  },
+  "homepage": "https://github.com/Fisher521/bookmarks-lifecycle"
+}
