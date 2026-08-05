@@ -13,10 +13,6 @@ can be undone.
 Aggregates via bookmarks-mcp. Writes only its own local state file, atomically. No accounts, no cloud, no network calls.
 ```
 
-> ⚠️ **Not published yet.** This package isn't on npm and can't be installed
-> with `npx`. See [Install](#install) for the clone-based setup this
-> currently requires.
-
 ## The model
 
 Five states:
@@ -62,48 +58,32 @@ runs unless you ask", not a claim that this replaces a habit-forming app.
 
 ## Install
 
-Not on npm yet. Both this package and its dependency `bookmarks-mcp` have to
-be run from a local clone:
+No account, no API key, no configuration — it works the moment it's
+installed.
+
+Claude Code:
 
 ```bash
-mkdir bookmarks-tools && cd bookmarks-tools
-
-# All three must be siblings — the file: dependencies resolve via ../
-git clone https://github.com/Fisher521/parse-bookmarks.git
-git clone https://github.com/Fisher521/bookmarks-mcp.git
-git clone https://github.com/Fisher521/bookmarks-lifecycle.git
-
-cd bookmarks-mcp && npm install && cd ..
-cd bookmarks-lifecycle && npm install
+claude mcp add -s user bookmarks-lifecycle -- npx -y bookmarks-lifecycle
 ```
 
-The directory layout `npm install` expects:
-
-```
-bookmarks-tools/
-├── parse-bookmarks/      ← parsing library (no dependencies)
-├── bookmarks-mcp/        ← reads your browsers; depends on ../parse-bookmarks
-└── bookmarks-lifecycle/  ← this package; depends on ../bookmarks-mcp
-```
-
-Then point your MCP client at the absolute path of `src/index.js`:
+Claude Desktop / Cursor / any MCP client (`mcpServers` JSON):
 
 ```json
 {
   "mcpServers": {
     "bookmarks-lifecycle": {
-      "command": "node",
-      "args": ["/absolute/path/to/bookmarks-lifecycle/src/index.js"]
+      "command": "npx",
+      "args": ["-y", "bookmarks-lifecycle"]
     }
   }
 }
 ```
 
-Claude Code:
-
-```bash
-claude mcp add -s user bookmarks-lifecycle -- node /absolute/path/to/bookmarks-lifecycle/src/index.js
-```
+To run from source instead (for development), clone `parse-bookmarks`,
+`bookmarks-mcp`, and this repo as sibling directories, run `npm install` in
+`bookmarks-mcp` and then in `bookmarks-lifecycle`, and point your client at
+`node /absolute/path/to/bookmarks-lifecycle/src/index.js`.
 
 **Use `-s user`.** Without it the scope defaults to `local`, which registers the
 server only for the directory you ran the command in — you'd have to be inside
