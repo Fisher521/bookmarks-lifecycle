@@ -1,6 +1,7 @@
 {
   "name": "bookmarks-lifecycle",
   "version": "0.2.0",
+  "mcpName": "io.github.Fisher521/bookmarks-lifecycle",
   "description": "Give your saved bookmarks a lifecycle: 24 hours to decide, 30 days to watch, or keep. Nothing is ever deleted — lapsed items just leave your attention, not your disk. A local MCP server, no accounts, no cloud.",
   "type": "module",
   "bin": {
