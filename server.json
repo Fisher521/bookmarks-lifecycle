@@ -1,0 +1,21 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.Fisher521/bookmarks-lifecycle",
+  "description": "Puts saved bookmarks on a decision clock: 24 hours to decide, 30 days to watch, or keep for good. Never deletes anything.",
+  "repository": {
+    "url": "https://github.com/Fisher521/bookmarks-lifecycle",
+    "source": "github"
+  },
+  "websiteUrl": "https://www.burn451.cloud/tools/bookmarks-lifecycle",
+  "version": "0.2.0",
+  "packages": [
+    {
+      "registryType": "npm",
+      "identifier": "bookmarks-lifecycle",
+      "version": "0.2.0",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ]
+}
