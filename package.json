@@ -1,7 +1,7 @@
 {
   "name": "bookmarks-lifecycle",
   "version": "0.2.0",
-  "description": "Give your saved bookmarks a lifecycle: 24 hours to decide, 30 days to watch, or keep. Nothing is ever deleted \u2014 lapsed items just leave your attention, not your disk. A local MCP server, no accounts, no cloud.",
+  "description": "Give your saved bookmarks a lifecycle: 24 hours to decide, 30 days to watch, or keep. Nothing is ever deleted — lapsed items just leave your attention, not your disk. A local MCP server, no accounts, no cloud.",
   "type": "module",
   "bin": {
     "bookmarks-lifecycle": "./src/index.js"
@@ -42,5 +42,5 @@
     "bookmarks-mcp": "file:../bookmarks-mcp",
     "zod": "^3.25.0"
   },
-  "homepage": "https://github.com/Fisher521/bookmarks-lifecycle"
+  "homepage": "https://www.burn451.cloud/tools/bookmarks-lifecycle"
 }
